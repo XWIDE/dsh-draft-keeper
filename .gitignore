@@ -1,0 +1,7 @@
+node_modules/
+.dsh/
+*.log
+
+# scratch files from local plugin-cli runs
+.cli-*.txt
+.cli-*.err

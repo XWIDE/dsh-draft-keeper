@@ -1,0 +1,67 @@
+{
+  "name": "dsh-draft-keeper",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness plugin: keeps the images you pasted or attached in the composer, per session — they are mirrored locally and put back when you return to that conversation or the composer remounts, and forgotten once the message is sent or you remove them.",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "composer",
+    "draft",
+    "attachment",
+    "clipboard"
+  ],
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "install.sh"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XWIDE/dsh-draft-keeper.git"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    },
+    "compatibility": {
+      "dsh": "^0.2.0-rc.1",
+      "dshReleases": {
+        "0.2.0-rc.2": "compatible"
+      },
+      "dshOperations": {
+        "0.2.0-rc.2": {
+          "install": "passed",
+          "start": "passed",
+          "uninstall": "unknown",
+          "rollback": "unknown"
+        }
+      }
+    }
+  }
+}
