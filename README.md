@@ -104,3 +104,9 @@ dsh plugin --profile web remove dsh-draft-keeper
 ## 许可
 
 MIT —— 见 [LICENSE](LICENSE)。
+
+## 作者
+
+**X-WIDE** —— GitHub [@XWIDE](https://github.com/XWIDE) · B 站 [374064919](https://space.bilibili.com/374064919) · xiupk@sina.com.cn
+
+有问题、想提需求，开 issue 就行。

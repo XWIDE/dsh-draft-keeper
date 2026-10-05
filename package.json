@@ -13,6 +13,8 @@
     "attachment",
     "clipboard"
   ],
+  "author": "X-WIDE <xiupk@sina.com.cn>",
+  "homepage": "https://github.com/XWIDE/dsh-draft-keeper#readme",
   "type": "module",
   "main": "./index.js",
   "exports": {
