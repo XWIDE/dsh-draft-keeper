@@ -42,10 +42,23 @@ The host half (`index.js`) is an empty `apply()`: it exists so the bundle is ins
 curl -fsSL https://raw.githubusercontent.com/XWIDE/dsh-draft-keeper/main/install.sh | sh
 ```
 
-Manual equivalent:
+**Desktop app (Windows)** — the desktop build does not put `dsh` on PATH, so the line above cannot run there. Use this instead:
+
+```powershell
+iwr https://raw.githubusercontent.com/XWIDE/dsh-draft-keeper/main/install.ps1 -useb | iex
+```
+
+It drives the plugin operations that ship inside the application (`resources\app\lib\plugin-cli.js`), so it needs nothing beyond PowerShell 5.1 and an installed DSH NEXT. Pass `-Remove` to uninstall.
+
+Manual equivalents:
 
 ```sh
 dsh plugin --profile web add git+https://github.com/XWIDE/dsh-draft-keeper.git
+```
+
+```powershell
+$exe = "$env:LOCALAPPDATA\Programs\DSH NEXT\DSH NEXT.exe"
+& $exe --expose-internals "$((Get-Item $exe).Directory.FullName)\resources\app\lib\plugin-cli.js" desktop add github:XWIDE/dsh-draft-keeper
 ```
 
 Then **restart the app once** so the bundle joins the host's module graph:

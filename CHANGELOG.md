@@ -2,6 +2,13 @@
 
 All notable changes to dsh-draft-keeper are recorded here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- **`install.ps1` — desktop-app installer for Windows.** The desktop build puts no `dsh` on PATH, so `install.sh` cannot run there. This script locates `DSH NEXT.exe`, sets `DSH_HOME`, and drives the plugin operations that ship inside the application (`resources\app\lib\plugin-cli.js`), so it needs nothing beyond PowerShell 5.1. `-Profile`, `-Exe` and `-Remove` are supported; one-liner `iwr …/install.ps1 -useb | iex`.
+- **README: desktop (Windows) install section** in both language files, with the manual `--expose-internals` equivalent spelled out.
+
 ## [0.1.0] — 2026-10-05
 
 First release. Measured against harness `0.2.0-rc.2` (desktop build).
